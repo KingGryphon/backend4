@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import pymysql
+pymysql.install_as_MySQLdb()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,7 +84,7 @@ DATABASES = {
         "NAME": "backend4",
         'USER': 'root',
         'PASSWORD': 'password123!',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
