@@ -8,7 +8,7 @@ class Menu(models.Model):
     Inventory=models.IntegerField()
 
     def __str__(self):
-        return f'{self.title} : {str(self.price)}'
+        return "{} : {}".format(self.title, self.price)
 
 
 class Booking(models.Model):
