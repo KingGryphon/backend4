@@ -1,4 +1,5 @@
 from django.db import models
+from decimal import Decimal
 
 # Create your models here.
 class Menu(models.Model):
@@ -8,7 +9,7 @@ class Menu(models.Model):
     Inventory=models.IntegerField()
 
     def __str__(self):
-        return "{} : {}".format(self.title, self.price)
+        return "{} : {}".format(self.Title, self.Price.quantize(Decimal('0.01')))
 
 
 class Booking(models.Model):
